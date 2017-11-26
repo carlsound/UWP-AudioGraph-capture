@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="W10_CS_Audio_Capture_Test_01.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:W10_CS_Audio_Capture_Test_01"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <!---->
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" ScrollViewer.VerticalScrollMode="Auto">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,12,0,0" TextWrapping="Wrap" Text="Available Audio Render Devices:" VerticalAlignment="Top"/>
+        <!---->
+        <ListBox x:Name="audioRenderDevicesListBox" HorizontalAlignment="Center" Height="Auto" VerticalAlignment="Top" Margin="12,4,12,0" SelectionChanged="audioRenderDeviceSelectionChanged" SelectedIndex="-1"/>
+        <!---->
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Center" Margin="0,4,0,0" TextWrapping="Wrap" Text="Available Audio Capture Devices:" VerticalAlignment="Top"/>
+        <!---->
+        <ListBox x:Name="audioCaptureDevicesListBox" HorizontalAlignment="Center" Height="Auto" Margin="12,4,12,0" VerticalAlignment="Top" SelectedIndex="-1" SelectionChanged="audioCaptureDeviceSelectionChanged"/>
+        <!---->
+        <ToggleButton x:Name="audioCaptureToggleButton" Content="Audio Capture Start/Stop" HorizontalAlignment="Center" Margin="0,20,0,20" VerticalAlignment="Top" ClickMode="Press" Checked="audioCaptureStart" Unchecked="audioCaptureStop"/>
+        <!---->
+        <Grid Height="Auto">
+            <ToggleButton x:Name="echoEffectToggleButton" Content="Echo Effect On/Off" HorizontalAlignment="Center" Margin="0,8,0,8" VerticalAlignment="Center" Checked="enableEchoEffect" Unchecked="disableEchoEffect"></ToggleButton>
+        </Grid>
+        <!---->
+        <Grid Height="Auto">
+            <ToggleButton x:Name="reverbEffectToggleButton" Content="Reverb Effect On/Off" HorizontalAlignment="Center" Margin="0,8,0,8" VerticalAlignment="Center" Checked="enableReverbEffect" Unchecked="disableReverbEffect"></ToggleButton>
+        </Grid>
+        <!---->
+         <Grid Height="Auto">
+            <ToggleButton x:Name="limiterEffectToggleButton" Content="Limiter Effect On/Off" HorizontalAlignment="Center" Margin="0,8,0,8" VerticalAlignment="Center" Checked="enableLimiterEffect" Unchecked="disableLimiterEffect"></ToggleButton>
+        </Grid>
+        <!---->
+        <Grid Height="Auto">
+            <ToggleButton x:Name="eqEffectToggleButton" Content="EQ Effect On/Off" HorizontalAlignment="Center" Margin="0,8,0,8" VerticalAlignment="Center" Checked="enableEqEffect" Unchecked="disableEqEffect"></ToggleButton>
+        </Grid>
+        <!---->
+    </StackPanel>
+    </ScrollViewer>
+</Page>
